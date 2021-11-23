@@ -3,14 +3,14 @@ const cors = require('cors')
 const mongoose = require('mongoose');
 // const bodyParser = require('body-parser')
 const url = "mongodb://localhost/AlienDBex"
-const tasksRouter= require('./routes/aliens.js');
+const tasksRouter= require('./routes/taskRoutes');
 const app = express();
 
 app.use(express.json());
 // app.use(bodyParser.urlencoded({extended:false}))
 // console.log(aliensRouter)
 app.use(cors());
-app.use('/aliens',tasksRouter);
+app.use('/tasks',tasksRouter);
 
 mongoose.connect(url,{useNewUrlParser: true});
 

@@ -1,6 +1,6 @@
 const express = require('express');
 const router1 = express.Router();
-const Task = require("../models/alien")
+const Task = require("../models/taskSchema")
 
     
 router1.get("/", async(req, res) => {
@@ -37,7 +37,7 @@ router1.delete('/:_id', async(req, res) => {
 // console.log(req.url);
 try {
  await Task.deleteOne({_id : req.params._id});
-  console.log(res.send());
+ // console.log(res.send());
 } catch (err) {
   res.send("Error  " + err);
 }
